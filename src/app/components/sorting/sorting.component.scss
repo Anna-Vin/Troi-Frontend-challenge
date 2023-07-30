@@ -1,0 +1,48 @@
+.sorting-container {
+    display: flex;
+    margin-bottom: 30px;
+
+    .sorting-block {
+        background-color: #EEEEEE;
+        color: black;
+        padding: 5px;
+        margin-right: 2px;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+
+        &.active {
+            background-color: #0090FF;
+            color: white;
+        }
+    }
+
+    .arrow {
+        display: inline-block;
+        margin-left: 2px;
+        color: white;
+        font-size: 6px;
+        transition: transform 0.3s ease;
+    }
+
+    .ascending .arrow {
+        transform: rotate(180deg);
+    }
+}
+
+
+@media (min-width: 768px) {
+    .sorting-container {
+
+
+        .sorting-block {
+            padding: 10px;
+            margin-right: 10px;
+        }
+
+        .arrow {
+            font-size: 12px;
+            margin-left: 5px;
+        }
+    }
+}

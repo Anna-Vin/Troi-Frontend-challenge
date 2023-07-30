@@ -1,0 +1,46 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: last baseline;
+}
+
+.container {
+    padding: 10px 30px;
+}
+
+select {
+    padding: 7px 14px;
+    border-radius: 6px;
+    color: grey;
+}
+
+@media (min-width: 768px) {
+
+    .body {
+        font-size: 16px;
+    }
+
+    .container {
+        padding: 50px 100px;
+    }
+
+    .form-group {
+        flex-direction: row;
+
+        .form-control {
+            &#searchInput {
+                min-width: 385px;
+            }
+
+            &#categorySelect {
+                min-width: 195px;
+                padding: 9px;
+            }
+        }
+    }
+}

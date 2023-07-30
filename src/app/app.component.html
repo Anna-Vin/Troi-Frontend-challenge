@@ -1,0 +1,35 @@
+<div class="container">
+  <h1>Front End Challenge</h1>
+  <app-filters
+    [categories]="categories"
+    (searchChange)="onSearchChange($event)"
+    (categoryChange)="onCategoryChange($event)"
+  ></app-filters>
+  <div class="row">
+    <app-sorting (sortChange)="onSortChange($event)"></app-sorting>
+    <div class="results"> {{ limitDisplay }} of {{ total }} results</div>
+  </div>
+  <app-product-list [products]="filteredProducts"></app-product-list>
+
+  <div class="pagination" *ngIf="filteredProducts?.length">
+    <select [(ngModel)]="limit" (change)="changeLimit(limit)">
+      <option value="10">10</option>
+      <option value="25">25</option>
+      <option value="50">50</option>
+      <option value="100">100</option>
+    </select>
+
+    <div class="pages">
+      <button (click)="prevPage()" class="page arrow">‹</button>
+      <button
+        *ngFor="let p of pageRange"
+        class="page"
+        [class.active]="p === page"
+        (click)="changePage(p)"
+      >
+        {{ p }}
+      </button>
+      <button (click)="nextPage()" class="page arrow">›</button>
+    </div>
+  </div>
+</div>

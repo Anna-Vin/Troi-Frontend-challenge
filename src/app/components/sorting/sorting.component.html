@@ -1,0 +1,28 @@
+<div class="sorting-container">
+  <div
+    class="sorting-block"
+    [ngClass]="{ active: activeSort === 'price', ascending: isAscending }"
+    (click)="onSort('price')"
+  >
+    price
+    <span class="arrow" *ngIf="activeSort === 'price'">&#x25BC;</span>
+  </div>
+
+  <div
+    class="sorting-block"
+    [ngClass]="{ active: activeSort === 'stock', ascending: isAscending }"
+    (click)="onSort('stock')"
+  >
+    stock
+    <span class="arrow" *ngIf="activeSort === 'stock'">&#x25BC;</span>
+  </div>
+
+  <div
+    class="sorting-block"
+    [ngClass]="{ active: activeSort === 'rating', ascending: isAscending }"
+    (click)="onSort('rating')"
+  >
+    rating
+    <span class="arrow" *ngIf="activeSort === 'rating'">&#x25BC;</span>
+  </div>
+</div>

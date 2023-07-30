@@ -1,0 +1,27 @@
+<div class="product-card" *ngIf="product">
+  <img
+    [src]="product.images[0]"
+    alt="{{ product.title }}"
+    class="product-card__image"
+  />
+  <div class="product-card__text">
+    <h2 class="product-card__title">{{ product.title }}</h2>
+    <p class="product-card__description">{{ product.description }}</p>
+    <div class="row">
+      <div class="product-card__price">
+        <span class="old-price" *ngIf="product.discountPercentage"
+          >$ {{ product.price }}</span
+        >
+        <span class="new-price">$ {{ discountedPrice }}</span>
+      </div>
+      <div class="product-card__rating">
+        <app-star
+          *ngFor="let star of [0, 1, 2, 3, 4]; let i = index"
+          [filled]="product.rating"
+          [index]="i"
+        >
+        </app-star>
+      </div>
+    </div>
+  </div>
+</div>

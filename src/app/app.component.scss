@@ -1,0 +1,74 @@
+.container {
+
+    h1 {
+        color: #707070;
+        font-size: 20px;
+        margin-bottom: 40px;
+    }
+
+    .pagination {
+        display: flex;
+
+
+        .pages {
+            align-self: center;
+            margin: 0 auto;
+
+            .page {
+                width: 20px;
+                height: 20px;
+                color: #707070;
+                background-color: transparent;
+                border: none;
+                border-radius: 50%;
+                font-size: 12px;
+                cursor: pointer;
+                transition: all 0.3s ease-in-out;
+
+                &:hover {
+                    color: #0090FF;
+                }
+
+                &.active {
+                    background-color: #0090FF;
+                    color: white;
+                }
+
+                &.arrow {
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+
+
+}
+
+@media (min-width: 768px) {
+
+    .pagination {
+        display: flex;
+
+
+        .pages {
+            align-self: center;
+            margin: 0 auto;
+
+            .page {
+                width: 37px;
+                height: 37px;
+                color: #707070;
+                font-size: 20px;
+
+                &:hover {
+                    color: #0090FF;
+                }
+
+                &.active {
+                    background-color: #0090FF;
+                    color: white;
+                }
+            }
+        }
+    }
+}

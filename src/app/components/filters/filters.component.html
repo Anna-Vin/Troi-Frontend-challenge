@@ -1,0 +1,32 @@
+<div class="form">
+  <div class="form-group">
+    <label for="searchInput">Search:</label>
+    <input
+      type="text"
+      id="searchInput"
+      class="form-group__item"
+      [(ngModel)]="searchTerm"
+      (input)="onSearchChange()"
+      placeholder="What are you looking for?"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="categorySelect">Category:</label>
+    <select
+      id="categorySelect"
+      class="form-group__item"
+      *ngIf="categories"
+      [(ngModel)]="selectedCategory"
+      (change)="onCategoryChange()"
+    >
+      <option value="" disabled selected>Select category</option>
+      <option
+        [value]="category.value"
+        *ngFor="let category of categories; trackBy: trackByFn"
+        >{{ category.view }}</option
+      >
+    </select>
+  </div>
+</div>
+<hr />
